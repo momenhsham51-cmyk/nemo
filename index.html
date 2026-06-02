@@ -3,201 +3,721 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HeartLink</title>
+<title>HeartLink Experience</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Cairo',sans-serif;
 scroll-behavior:smooth;
 }
+
 body{
-background:#0a0a0a;
+
+background:
+radial-gradient(circle at top,#1e2f7c 0%,#0a1030 35%,#02050f 100%);
+
 color:white;
 overflow-x:hidden;
+
 }
+
 .hero{
-height:100vh;
+
+width:95%;
+max-width:1400px;
+
+margin:20px auto;
+
+padding:30px 20px 140px;
+
+border-radius:45px;
+
+position:relative;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.02)
+);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 50px rgba(115,94,255,.25);
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+background:
+radial-gradient(
+circle,
+rgba(100,90,255,.25),
+transparent 70%
+);
+
+top:-300px;
+right:-250px;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:300px;
+height:300px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,80,150,.3),
+transparent 70%
+);
+
+bottom:-100px;
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+.top-bar{
+
 display:flex;
-flex-direction:column;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.moon{
+
+width:60px;
+height:60px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.05);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:26px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.header-text{
+
+text-align:center;
+flex:1;
+
+}
+
+.header-text h3{
+
+font-size:18px;
+color:#fff;
+
+}
+
+.header-text p{
+
+letter-spacing:5px;
+
+color:#8492ff;
+
+font-weight:700;
+
+}
+
+.logo-box{
+
+width:180px;
+height:180px;
+
+margin:40px auto;
+
+border-radius:45px;
+
+background:
+linear-gradient(
+145deg,
+#5565d3,
+#2c397f
+);
+
+display:flex;
 justify-content:center;
 align-items:center;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.5);
+
+}
+
+.logo-box img{
+
+width:120px;
+height:120px;
+
+border-radius:25px;
+
+object-fit:cover;
+
+}
+
+.small-title{
+
 text-align:center;
-padding:20px;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
-linear-gradient(135deg,#ff0066,#6a00ff);
-}
-.hero h1{
-font-size:55px;
-max-width:900px;
-margin-bottom:20px;
-}
-.hero p{
-font-size:20px;
-color:#ddd;
-max-width:600px;
-margin-bottom:30px;
-}
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-justify-content:center;
-}
-.btn{
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-}
-.primary{
-background:white;
-color:black;
-}
-.primary:hover{
-transform:scale(1.08);
-}
-.secondary{
-border:2px solid white;
-color:white;
-}
-.secondary:hover{
-background:white;
-color:black;
-}
-.section{
-padding:90px 20px;
-}
-.section h2{
-font-size:40px;
-text-align:center;
-margin-bottom:40px;
-}
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1200px;
-margin:auto;
-}
-.card{
-background:#141414;
-padding:25px;
-border-radius:20px;
-border:1px solid #222;
-transition:.3s;
-}
-.card:hover{
-transform:translateY(-10px);
-}
-.card img{
-width:100%;
-border-radius:15px;
+
+font-size:24px;
+font-weight:700;
+
+color:#ffd16a;
+
 margin-bottom:15px;
+
 }
-.card h3{
-margin-bottom:10px;
-}
-.card p{
-color:#bbb;
-}
-.contact{
+
+.brand{
+
 text-align:center;
-padding:80px 20px;
+
+font-size:22px;
+
+letter-spacing:8px;
+
+color:#8492ff;
+
+margin-bottom:20px;
+
 }
-.whatsapp{
-display:inline-block;
-background:#25D366;
-color:white;
-text-decoration:none;
-padding:15px 35px;
-border-radius:50px;
-font-size:20px;
-font-weight:bold;
-margin-top:20px;
-}
-.footer{
-padding:30px;
-text-align:center;
-color:#777;
-border-top:1px solid #222;
-}
-@media(max-width:768px){
+
 .hero h1{
-font-size:35px;
+
+font-size:70px;
+
+font-weight:900;
+
+text-align:center;
+
+line-height:1.2;
+
+max-width:900px;
+
+margin:auto;
+
 }
-.hero p{
-font-size:17px;
+
+.highlight{
+
+background:
+linear-gradient(
+90deg,
+#8ca3ff,
+#8f67ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
 }
+
+.hero p.main{
+
+font-size:24px;
+
+text-align:center;
+
+margin-top:25px;
+
+color:#d5d5d5;
+
+}
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+width:260px;
+height:85px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:30px;
+
+font-size:28px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.primary{
+
+background:
+linear-gradient(
+90deg,
+#5f7cff,
+#ae58ff
+);
+
+color:white;
+
+box-shadow:
+0 10px 35px rgba(126,92,255,.5);
+
+}
+
+.secondary{
+
+background:
+rgba(0,0,40,.5);
+
+color:white;
+
+border:1px solid rgba(255,255,255,.1);
+
+}
+
+.btn:hover{
+
+transform:translateY(-6px);
+
+}
+
+.section{
+
+padding:100px 20px;
+
+}
+
 .section h2{
-font-size:30px;
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:50px;
+
 }
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+max-width:1200px;
+
+margin:auto;
+
 }
+
+.card{
+
+background:
+rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+padding:25px;
+
+border-radius:25px;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card img{
+
+width:100%;
+
+border-radius:20px;
+
+margin-bottom:15px;
+
+}
+
+.card h3{
+
+margin-bottom:10px;
+
+font-size:24px;
+
+}
+
+.card p{
+
+color:#d0d0d0;
+
+}
+
+.contact{
+
+text-align:center;
+
+padding:100px 20px;
+
+}
+
+.whatsapp{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:18px 40px;
+
+background:#25D366;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:50px;
+
+font-size:22px;
+
+font-weight:700;
+
+}
+
+.footer{
+
+padding:120px 20px 30px;
+
+text-align:center;
+
+color:#888;
+
+}
+
+.bottom-nav{
+
+position:fixed;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:95%;
+max-width:900px;
+
+padding:15px;
+
+display:flex;
+
+justify-content:space-around;
+
+background:
+rgba(10,15,40,.85);
+
+backdrop-filter:blur(20px);
+
+border-radius:35px;
+
+border:1px solid rgba(255,255,255,.08);
+
+z-index:9999;
+
+}
+
+.bottom-nav a{
+
+color:white;
+
+text-decoration:none;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+font-size:14px;
+
+gap:5px;
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+.hero p.main{
+
+font-size:18px;
+
+}
+
+.btn{
+
+width:180px;
+height:65px;
+
+font-size:22px;
+
+}
+
+.logo-box{
+
+width:140px;
+height:140px;
+
+}
+
+.logo-box img{
+
+width:95px;
+height:95px;
+
+}
+
+.section h2{
+
+font-size:35px;
+
+}
+
+.bottom-nav{
+
+font-size:12px;
+
+overflow-x:auto;
+
+}
+
+}
+
 </style>
 </head>
 <body>
+
 <section class="hero">
-<h1>حول ذكرياتك إلى تجربة رقمية لا تُنسى ❤️</h1>
-<p>
-هدايا رقمية احترافية وألبومات وصور وفيديوهات مصممة خصيصًا لك.
-</p>
-<div class="buttons">
-<a href="#services" class="btn primary">خدماتنا</a>
-<a href="#gallery" class="btn secondary">أعمالنا</a>
+
+<div class="top-bar">
+
+<div class="moon">🌙</div>
+
+<div class="header-text">
+<h3>👑 أول منصة للهدايا الرقمية في مصر</h3>
+<p>HEARTLINK EXPERIENCE</p>
 </div>
+
+</div>
+
+<div class="logo-box">
+<img src="https://i.imgur.com/q7V5W9F.png">
+</div>
+
+<div class="small-title">
+👑 أول منصة للهدايا الرقمية في مصر ✨
+</div>
+
+<div class="brand">
+HEARTLINK EXPERIENCE
+</div>
+
+<h1>
+حوّل أي مناسبة إلى تجربة
+رقمية <span class="highlight">لا تُنسى</span>
+</h1>
+
+<p class="main">
+🚀 من فكرة بسيطة إلى تجربة رقمية كاملة تخطف الأنظار
+</p>
+
+<div class="buttons">
+
+<a href="#order" class="btn primary">
+🚀 اطلب الآن
+</a>
+
+<a href="#gallery" class="btn secondary">
+🎁 مشاهدة النماذج
+</a>
+
+</div>
+
 </section>
-<section id="services" class="section">
-<h2>خدماتنا ✨</h2>
+
+<section class="section">
+
+<h2>✨ خدماتنا</h2>
+
 <div class="cards">
+
 <div class="card">
 <h3>🎁 هدايا رقمية</h3>
-<p>تصميم هدايا إلكترونية فريدة ومميزة.</p>
+<p>تصميم هدايا إلكترونية فريدة.</p>
 </div>
+
 <div class="card">
 <h3>📸 ألبومات صور</h3>
-<p>تحويل صورك إلى قصة ذكريات احترافية.</p>
+<p>تحويل الصور إلى ذكريات احترافية.</p>
 </div>
+
 <div class="card">
 <h3>💌 رسائل مخصصة</h3>
-<p>رسائل أنيقة ومؤثرة بتصميم فريد.</p>
+<p>رسائل أنيقة بتصميم فاخر.</p>
 </div>
+
 <div class="card">
 <h3>🎥 فيديوهات ذكريات</h3>
-<p>مونتاج احترافي لأجمل لحظاتك.</p>
+<p>مونتاج احترافي للمناسبات.</p>
 </div>
+
 </div>
+
 </section>
+
 <section id="gallery" class="section">
-<h2>نماذج أعمالنا 📸</h2>
+
+<h2>📸 نماذج أعمالنا</h2>
+
 <div class="cards">
+
 <div class="card">
 <img src="https://picsum.photos/500/350?1">
 <h3>هدية عيد ميلاد</h3>
 </div>
+
 <div class="card">
 <img src="https://picsum.photos/500/350?2">
 <h3>ألبوم ذكريات</h3>
 </div>
+
 <div class="card">
 <img src="https://picsum.photos/500/350?3">
 <h3>رسالة رقمية</h3>
 </div>
+
 </div>
+
 </section>
-<section class="contact">
-<h2>تواصل معنا 📱</h2>
-<p>لطلب أي خدمة أو الاستفسار تواصل معنا مباشرة.</p>
-<a class="whatsapp"
+
+<section id="order" class="contact">
+
+<h2>📱 اطلب الآن</h2>
+
+<p>
+لطلب أي خدمة تواصل معنا مباشرة عبر واتساب
+</p>
+
+<a
+class="whatsapp"
 href="https://wa.me/201114057704">
+
 تواصل عبر واتساب
+
 </a>
+
 </section>
+
 <div class="footer">
-© 2026 HeartLink - جميع الحقوق محفوظة
+© 2026 HEARTLINK EXPERIENCE
 </div>
+
+<div class="bottom-nav">
+
+<a href="#">
+🏠
+<span>الرئيسية</span>
+</a>
+
+<a href="#gallery">
+▶️
+<span>مثال حي</span>
+</a>
+
+<a href="#services">
+💎
+<span>المميزات</span>
+</a>
+
+<a href="#">
+⭐
+<span>آراء العملاء</span>
+</a>
+
+<a href="#">
+❓
+<span>FAQ</span>
+</a>
+
+<a href="#order">
+🛒
+<span>اطلب</span>
+</a>
+
+<a href="#">
+💬
+<span>تواصل</span>
+</a>
+
+</div>
+
 </body>
 </html>
-`
