@@ -7,62 +7,134 @@
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
-background:#0f172a;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0a0a0a;
 color:white;
-text-align:center;
+overflow-x:hidden;
 }
 
 .hero{
-padding:80px 20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+linear-gradient(135deg,#ff0066,#6a00ff);
 }
 
-h1{
-font-size:40px;
+.hero h1{
+font-size:55px;
+max-width:900px;
+margin-bottom:20px;
 }
 
-p{
-font-size:18px;
-color:#cbd5e1;
+.hero p{
+font-size:20px;
+color:#ddd;
+max-width:600px;
+margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .btn{
-display:inline-block;
-padding:15px 30px;
-margin:10px;
-border-radius:12px;
+padding:15px 35px;
+border-radius:50px;
 text-decoration:none;
 font-weight:bold;
+transition:.3s;
 }
 
-.btn1{
-background:#ff4d6d;
-color:white;
-}
-
-.btn2{
+.primary{
 background:white;
 color:black;
 }
 
-.section{
-padding:50px 20px;
+.primary:hover{
+transform:scale(1.08);
+}
+
+.secondary{
+border:2px solid white;
+color:white;
+}
+
+.secondary:hover{
+background:white;
+color:black;
+}
+
+.services{
+padding:80px 20px;
+}
+
+.services h2{
+font-size:40px;
+margin-bottom:40px;
+text-align:center;
 }
 
 .cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
 .card{
-background:#1e293b;
-padding:20px;
-width:200px;
-border-radius:15px;
+background:#141414;
+padding:30px;
+border-radius:25px;
+border:1px solid #2a2a2a;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#bdbdbd;
+}
+
+.footer{
+padding:40px;
+text-align:center;
+color:#999;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:35px;
+}
+
+.hero p{
+font-size:17px;
+}
+
 }
 
 </style>
@@ -70,36 +142,53 @@ border-radius:15px;
 
 <body>
 
-<div class="hero">
+<section class="hero">
 
-<h1>حول ذكرياتك إلى هدية رقمية مميزة ❤️</h1>
+<h1>حول ذكرياتك إلى تجربة رقمية لا تُنسى ❤️</h1>
 
 <p>
-صمم هديتك بطريقة احترافية وفريدة
+هدايا رقمية احترافية، ألبومات ذكريات، رسائل حب، وتصميمات مخصصة بأفضل جودة.
 </p>
 
-<a href="#" class="btn btn1">اطلب الآن</a>
-
-<a href="#" class="btn btn2">شاهد النماذج</a>
-
+<div class="buttons">
+<a href="#" class="btn primary">اطلب الآن</a>
+<a href="#" class="btn secondary">شاهد أعمالنا</a>
 </div>
 
-<div class="section">
+</section>
+
+<section class="services">
 
 <h2>خدماتنا ✨</h2>
 
 <div class="cards">
 
-<div class="card">🎁 هدايا رقمية</div>
+<div class="card">
+<h3>🎁 هدايا رقمية</h3>
+<p>تصميم هدايا فريدة ومميزة لأي مناسبة.</p>
+</div>
 
-<div class="card">💌 رسائل مخصصة</div>
+<div class="card">
+<h3>📸 ألبومات صور</h3>
+<p>تحويل صورك إلى قصة ذكريات احترافية.</p>
+</div>
 
-<div class="card">📸 ألبومات صور</div>
+<div class="card">
+<h3>💌 رسائل مخصصة</h3>
+<p>رسائل مصممة بأسلوب أنيق ومؤثر.</p>
+</div>
 
-<div class="card">🎥 فيديوهات ذكريات</div>
+<div class="card">
+<h3>🎥 فيديوهات ذكريات</h3>
+<p>مونتاج احترافي يحول لحظاتك إلى فيلم قصير.</p>
+</div>
 
 </div>
 
+</section>
+
+<div class="footer">
+© 2026 HeartLink - جميع الحقوق محفوظة
 </div>
 
 </body>
